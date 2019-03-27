@@ -1,0 +1,39 @@
+{
+   "properties": {
+      "displayName": "Allowed SQL DB SKUs",
+      "description": "This policy enables you to specify a set of SQL DB SKUs",
+      "parameters": {
+      },
+      "policyRule": {
+         "if": {
+            "allOf": [
+               {
+                  "field": "type",
+                  "equals": "Microsoft.SQL/servers/databases"
+               },
+               {
+                  "field": "name",
+                  "notEquals": "master"
+               },
+               {
+                  "not": {
+                     "anyOf": [
+                        {
+                           "field": "Microsoft.SQL/servers/databases/requestedServiceObjectiveId",
+                           "in": "['S0','S1']"
+                        },
+                        {
+                           "field": "Microsoft.SQL/servers/databases/requestedServiceObjectiveName",
+                           "in": "['Standard','Basic']"
+                        }
+                     ]
+                  }
+               }
+            ]
+         },
+         "then": {
+            "effect": "Deny"
+         }
+      }
+   }
+}
