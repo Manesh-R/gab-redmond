@@ -1,10 +1,4 @@
-{
-   "properties": {
-      "displayName": "Allowed SQL DB SKUs",
-      "description": "This policy enables you to specify a set of SQL DB SKUs",
-      "parameters": {
-      },
-      "policyRule": {
+ {
          "if": {
             "allOf": [
                {
@@ -35,5 +29,4 @@
             "effect": "Deny"
          }
       }
-   }
-}
+ 
