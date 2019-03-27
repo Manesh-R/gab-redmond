@@ -14,11 +14,11 @@
                      "anyOf": [
                         {
                            "field": "Microsoft.SQL/servers/databases/requestedServiceObjectiveId",
-                           "in": "['S0','S1']"
+                           "in": [ "S0" , "S1" ]
                         },
                         {
                            "field": "Microsoft.SQL/servers/databases/requestedServiceObjectiveName",
-                           "in": "['Standard','Basic']"
+                           "in": [ "Standard" , "Basic" ]
                         }
                      ]
                   }
